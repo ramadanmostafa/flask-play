@@ -1,20 +1,9 @@
-# NewStore Cloud Developer Task
 
 ## Introduction
 
 This is a two-step code challenge with the following **GOAL**:
 
     Deliver a small and simple flask-based RESTful-ish API for managing users
-
-#### Part 1
-
-- The candidate should extend the existing code to implement at least one of the user stories below.
-
-
-#### Part 2
-
-The candidate comes for an in-house interview (or remote interview)
-where they will pair-program with a NewStore engineer to further extend the code.
 
 
 
@@ -47,10 +36,6 @@ All the commands below assume you have
 installed in MacOS and can be installed in ubuntu with `sudo apt
 install make`. If you use a different linux distribution please make
 sure to install it.
-
-The purpose of `make` is to automate the maintenance and testing of
-the code, we use it every day at *NewStore* so if you're not familiar
-with it this is a good chance to get acquainted.
 
 (Feel free to open the file `Makefile` in your editor to see what it is doing)
 
@@ -112,26 +97,13 @@ make functional
 make run
 ```
 
-## Ready to start ?
-
-Here are the [user stories](http://martinfowler.com/bliki/GivenWhenThen.html) that
-you need to deliver.
-
-Imagine that you are already working at NewStore and each story is a
-ticket that you are closing in a normal day of work.
-
-Also keep in mind you are writing code that will need to be maintained
-by other people, so
-[quality](https://en.wikipedia.org/wiki/Software_craftsmanship#Manifesto)
-matters over quantity.
-
 
 
 ### Story 1: Create a simple endpoint that generates an md5 hash of an arbitrary email
 
 ```gherkin
-Given the arbitrary email address "user@newstore.com"
-When I POST a json payload with '{"data": "user@newstore.com"}' to the URL "/api/calculate-md5"
+Given the arbitrary email address "user@ddd.com"
+When I POST a json payload with '{"data": "user@ddd.com"}' to the URL "/api/calculate-md5"
 Then it should return a json that looks like this: '{"md5": "8c3a7ee05457d337d5bb14f438464cbf"}'
 ```
 
@@ -155,7 +127,7 @@ And it should be stored in some sort of database
 
     Notes:
       1. Generate the UUID with the pseudo-algorithm:
-         uuid = md5digest("newstore:guido@python.org")
+         uuid = md5digest("test:guido@python.org")
 
       2. Store password securely.
 
@@ -220,5 +192,3 @@ And now the database should only contain the users:
   | first_name | email            | password  |
   | Foo        | foo@bar.com      | foobar123 |
 ```
-
-## Happy Hacking and good luck!
